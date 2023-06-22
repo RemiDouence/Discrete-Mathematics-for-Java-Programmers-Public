@@ -11,6 +11,11 @@ There are 4 blocks.
 I evaluate the last (4th) block.
 Total time = 15h.
 
+- bloc 1: quantified boolean expression evaluation
+- bloc 2: boolean expression proof
+- bloc 3: proof by induction for natural expressions
+- bloc 4: evaluation 
+
 - This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License 
 - https://creativecommons.org/licenses/by-nc-nd/4.0/
 - Remi Douence
