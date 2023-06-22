@@ -1,3 +1,11 @@
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Bool`
 The class `Bool` (and its subclasses) represents an abstract syntax tree. 
 This structure has no behavior (i.e., no method) beside `toString` and `equals`
@@ -19,6 +27,14 @@ Note that `HashSet.contains` calls `static Object.equals` calls `Object.equals`
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 ## `True` 
 ```
 package TP2.Bool;
@@ -32,6 +48,14 @@ public class True extends Bool {
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 ## `False` 
 ```
 package TP2.Bool;
@@ -44,6 +68,14 @@ public class False extends Bool {
 		return o instanceof False;
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 ## `Var` 
 ```
@@ -67,6 +99,14 @@ public class Var extends Bool {
 }
 
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 ## `And` 
 ```
 package TP2.Bool;
@@ -86,6 +126,14 @@ public class And extends Bool {
 			&& b2.equals(((And)o).b2);
 	}
 }
+
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
 
 ```
 ## `Or` 
@@ -109,6 +157,14 @@ public class Or extends Bool {
 }
 
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 ## `Not` 
 ```
 package TP2.Bool;
@@ -126,6 +182,14 @@ public class Not extends Bool {
 			&& b1.equals(((Not)o).b1);
 	}
 }
+
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
 
 ```
 ## `Imply` 
@@ -147,6 +211,14 @@ public class Imply extends Bool {
 			&& b2.equals(((Imply)o).b2);
 	}
 }
+
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
 
 ```
 # `Sequent` 
@@ -195,6 +267,14 @@ The usual syntax for a goal under a set of hypotheses.
 }
 
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Tactic` 
 ```
 package TP2;
@@ -220,6 +300,14 @@ The printer returns an ascii representation of the tree of composed tactics
 ```
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticAxiom`  
 ```
 package TP2;
@@ -241,6 +329,14 @@ Checks if the goal is one of the hypotheses.
 		}
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `TacticHole` (represents a proof in progress) 
 ```
@@ -268,6 +364,14 @@ It prints the current sequent yet to be proved.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticTrueI` (true introduction) 
 ```
 package TP2;
@@ -291,6 +395,14 @@ Checks if the goal is trivially true.
 		}
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `TacticFalseE` (false elimination)  
 ```
@@ -320,6 +432,14 @@ let us (try to) prove false.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticAndE1` (conjunction elimination) 
 ```
 package TP2;
@@ -347,6 +467,14 @@ To prove A, let us prove A && B
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticAndE2` (conjunction elimination) 
 ```
 package TP2;
@@ -373,6 +501,14 @@ To prove A, let us prove B && A
 		return t2.prove(s.copy(new And(e1,s.goal)));
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `TacticAndI` (conjunction introduction) 
 ```
@@ -411,6 +547,14 @@ To prove a conjunction, you have to make two proofs.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticImplyE` (implication elimination) 
 ```
 package TP2;
@@ -445,6 +589,14 @@ then prove A.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticImplyI` (implication introduction) 
 ```
 package TP2;
@@ -478,6 +630,14 @@ To prove A => B, let us add A to the hypotheses and prove B
 		}
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `TacticNotE` (negation elimination)  
 ```
@@ -519,6 +679,14 @@ by proving both a property `b` and its negation.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticNotI` (negation introduction)
 ```
 package TP2;
@@ -554,6 +722,14 @@ This is also known as a proof by contradiction (preuve par l'absurde en francais
 		}
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `TacticOrE` (disjunction elimination) 
 ```
@@ -601,6 +777,14 @@ and prove B || C
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticOrI1` (disjunction introduction) 
 ```
 package TP2;
@@ -633,6 +817,14 @@ To prove A || B, let us prove A.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `TacticOrI2` (disjunction introduction) 
 ```
 package TP2;
@@ -664,6 +856,14 @@ To prove A || B, let us prove B.
 		}
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Bool` 
 ```

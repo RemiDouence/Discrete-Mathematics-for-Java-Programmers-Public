@@ -1,3 +1,9 @@
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 // # `Add1` (addition) 
 // `Add1 e1 e2` represents the sum `e1 + e2`. 
 // `Add1` enables us to define alternative rules for the addition. 

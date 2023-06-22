@@ -93,6 +93,14 @@ Existential quantification `exist x.b` is true when `b` is true for at least one
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # The True constant
 ```
 package TP1;
@@ -111,6 +119,14 @@ Trivial evaluation by returning the `true` Java constant
 		return true;
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # Not and (aka Nand)
 Nand gates are used to define processors. 
@@ -140,6 +156,14 @@ This is the only place we use Java boolean operator.
 		return !(b1.eval(env) && b2.eval(env));
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # Environment 
 An environment is a set of pairs. 
@@ -189,6 +213,14 @@ Testing code
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # Variable (aka constant)
 A variable is a named constant. 
 ```
@@ -217,6 +249,14 @@ But you should not.
 		return env.get(s);
 	}
 }
+
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
 
 ```
 # Let binder
@@ -258,6 +298,14 @@ and proceed to evaluate the expression in this enriched environment.
 		return b2.eval(env.set(v.s, b1));
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # Main 
 This project implements a simple interpreter for boolean expressions.

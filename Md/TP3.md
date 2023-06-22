@@ -1,3 +1,11 @@
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Exp`
 ```
 package TP3;
@@ -60,6 +68,14 @@ by unifying P1 with E and returning P2 where variables have been substituted
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Z` (zero) 
 `Z` represents the natural zero. 
 ```
@@ -84,6 +100,14 @@ public class Z extends Exp {
 		return o != null && o instanceof Z;
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `S` (successor) 
 `S n` represents the natural `n+1`. 
@@ -120,6 +144,14 @@ public class S extends Exp {
 		return o != null && o instanceof S && p.equals(((S)o).p);
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Add` (addition) 
 `Add e1 e2` represents the sum `e1 + e2`. 
@@ -175,6 +207,14 @@ If we cannot rewrite an `Add` expression, we try to rewrite its subexpressions.
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Var` (variable) 
 `Var` represents a variable in an expression, i.e., in a pattern. 
 ```
@@ -210,6 +250,14 @@ public class Var extends Exp {
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Rule` (a rewriting rule) 
 `Rule` a rule is a pair of patterns 
 ```
@@ -230,6 +278,14 @@ public class Rule {
 		return new Rule(lhs.substitute(ss),rhs.substitute(ss));
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Equation` (equation) 
 `Equation e1 e2` represents the equality `e1 = e2`. 
@@ -262,6 +318,14 @@ public class Equation {
 		System.out.println(this);
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Proof` (proof by induction) 
 `Proof(e,x)` represents a proof of an equation `e` by induction on `x`. 
@@ -299,6 +363,14 @@ Hence, a proof is over.
 		return caseZ.isTrivial() && caseS.isTrivial();
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Add1` (addition) 
 `Add1 e1 e2` represents the sum `e1 + e2`. 
@@ -345,6 +417,14 @@ public class Add2 extends Exp {
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Add1` (addition) 
 `Add1 e1 e2` represents the sum `e1 + e2`. 
 `Add1` enables us to define alternative rules for the addition. 
@@ -389,6 +469,14 @@ public class Add3 extends Exp {
 				&& e2.equals(((Add3)o).e2);
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `Add1` (addition) 
 `Add1 e1 e2` represents the sum `e1 + e2`. 
@@ -435,6 +523,14 @@ public class Add4 extends Exp {
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Add1` (addition) 
 `Add1 e1 e2` represents the sum `e1 + e2`. 
 `Add1` enables us to define alternative rules for the addition. 
@@ -480,6 +576,14 @@ public class Add5 extends Exp {
 	}
 }
 ```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
+```
 # `Mul` (multiplication) 
 `Mul e1 e2` represents the product `e1 * e2`. 
 `Mul` enables us to define rules for the product. 
@@ -524,6 +628,14 @@ public class Mul extends Exp {
 				&& p2.equals(((Mul)o).p2);
 	}
 }
+```
+```
+// This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
+// https://creativecommons.org/licenses/by-nc-nd/4.0/
+// Remi Douence
+//
+// Please do not distribute solutions but let people learn by doing the exercices.
+
 ```
 # `MainTP3` (proof by induction) 
 TP3 introduces expression rewriting (expression, pattern, unification, substitution, rules).
