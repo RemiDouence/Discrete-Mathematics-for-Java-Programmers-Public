@@ -21,9 +21,9 @@ Total time = 15h.
 
 The code is presented in two different versions:
 
-1. in LiterateExo: (`.md`) literate markdown 
+1. in Md: (`.md`) literate markdown 
   https://agda.readthedocs.io/en/v2.6.3/tools/literate-programming.html#literate-markdown
   It renders nicely on github. It is the one you wish to browse online.
 
-2. in JavaExo: (`.java`) plain Java without markdown.
+2. in TPi: (`.java`) plain Java.
    It can be used to focus on code. 
