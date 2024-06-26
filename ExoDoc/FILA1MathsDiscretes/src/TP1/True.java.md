@@ -1,12 +1,14 @@
-
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
-
-// # The True constant
+```
 package TP1;
+
+```
+# The Class `True`
+- represents the constant `true`
+- there is no need to create multiple instances
+```
 
 public class True extends Bool {
 	// Printer compliant with Java syntax. 
@@ -19,3 +21,4 @@ public class True extends Bool {
 	}
 }
 
+```

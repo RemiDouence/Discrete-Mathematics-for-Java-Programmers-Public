@@ -1,12 +1,7 @@
-```
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
 
-// # `S` (successor) 
-// `S n` represents the natural `n+1`. 
 package TP3;
 
 import java.util.HashMap;
@@ -40,4 +35,3 @@ public class S extends Exp {
 	}
 }
 
-```

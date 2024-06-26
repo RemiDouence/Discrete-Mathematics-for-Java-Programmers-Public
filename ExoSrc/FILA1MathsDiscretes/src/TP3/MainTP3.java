@@ -1,18 +1,7 @@
-```
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
 
-// # `MainTP3` (proof by induction) 
-// TP3 introduces expression rewriting (expression, pattern, unification, substitution, rules).
-// Rewriting is exemplified with natural numbers and addition. 
-// This can be viewed as the base for functional languages. 
-// 
-// Then TP3 introduces proof by induction (equation). 
-// With restricted renamming (via substitution) 
-// we pose an hypothesis and rewrite equations until they are trivial. 
 package TP3;
 
 import java.util.LinkedList;
@@ -384,4 +373,3 @@ public class MainTP3 {
 	}
 }
 
-```

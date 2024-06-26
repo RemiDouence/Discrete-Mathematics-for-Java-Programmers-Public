@@ -1,13 +1,10 @@
-```
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
 
-// # Variable (aka constant)
-// A variable is a named constant. 
 package TP1;
+
+
 
 public class Var extends Bool {
 	// The name of the constant. 
@@ -28,6 +25,3 @@ public class Var extends Bool {
 		return env.get(s);
 	}
 }
-
-
-```

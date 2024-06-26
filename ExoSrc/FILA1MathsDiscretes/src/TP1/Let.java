@@ -1,19 +1,16 @@
-```
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
 
-// # Let binder
-// Let define a new constant in an expression. 
 package TP1;
+
+
 
 public class Let extends Bool {
 	// The name of the constant. 
 	final public Var v;
 	// The value of the constant. 
-	// Exercise: in general `b1` could be a `Bool`expression. 
+	// Exercise: in general `b1` could be a `Bool` expression. 
 	// Modify the program accordingly. 
 	final public boolean b1;
 	// The expression here the constant can be referenced. 
@@ -33,5 +30,3 @@ public class Let extends Bool {
 		return b2.eval(env.set(v.s, b1));
 	}
 }
-
-```

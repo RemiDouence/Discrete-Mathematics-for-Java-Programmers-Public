@@ -1,12 +1,7 @@
-```
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
 
-// # `Var` (variable) 
-// `Var` represents a variable in an expression, i.e., in a pattern. 
 package TP3;
 
 import java.util.HashMap;
@@ -39,4 +34,3 @@ public class Var extends Exp {
 	}
 }
 
-```

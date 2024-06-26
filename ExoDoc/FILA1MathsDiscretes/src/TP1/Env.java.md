@@ -1,16 +1,18 @@
-
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
-
-// # Environment 
-// An environment is a set of pairs. 
-// Each pair binds a variable identifier with its value. 
+```
 package TP1;
 
 import java.util.HashMap;
+
+```
+# The Environment Class `Env` 
+- an expression can contain variables 
+- when a variable is bound it has a value
+- an environment stores the value of the (bound) variables
+- an environment is based on the `HashMap`
+```
 
 // The implementation is based on hash maps. 
 // The type of values is generic. 
@@ -24,7 +26,7 @@ public class Env<A> extends HashMap<String,A> {
 	public A get(String k) {
 		return super.get(k);
 	}
-	// MD Environments are immutable: `set` returns a new environment. 
+	// Environments are immutable: `set` returns a new environment. 
 	public Env<A> set(String k,A v) {
 		// Beware of Java shallow copy in constructors. 
 		// Here the values are shared but it is fine. 
@@ -46,3 +48,4 @@ public class Env<A> extends HashMap<String,A> {
 	}
 }
 
+```

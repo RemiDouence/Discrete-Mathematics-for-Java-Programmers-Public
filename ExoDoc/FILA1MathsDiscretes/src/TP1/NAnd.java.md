@@ -1,14 +1,15 @@
-
 // This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
 // https://creativecommons.org/licenses/by-nc-nd/4.0/
 // Remi Douence
-//
-// Please do not distribute solutions but let people learn by doing the exercices.
-
-// # Not and (aka Nand)
-// Nand gates are used to define processors. 
-// In this TP we use them to define other boolean operators. 
+```
 package TP1;
+
+```
+# The class `NAnd` 
+- `NAnd` stands for "not and" 
+- this is the atomic piece (gate) for processors
+- every other boolean operators can be written with `Nand` only (and `True`) 
+```
 
 public class NAnd extends Bool {
 	// Boolean expression are immutable (hence the `final` field modifier). 
@@ -26,4 +27,4 @@ public class NAnd extends Bool {
 		return !(b1.eval(env) && b2.eval(env));
 	}
 }
-
+```
