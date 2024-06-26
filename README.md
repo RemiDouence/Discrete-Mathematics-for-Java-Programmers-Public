@@ -1,4 +1,4 @@
-# Discrete-Mathematics-for-Java-Programmers-Public
+# Discrete-Mathematics-for-Java-Programmers
 
 Here is the material for my course at IMT Atlantique about Discrete Mathematics for Java programmers.
 
