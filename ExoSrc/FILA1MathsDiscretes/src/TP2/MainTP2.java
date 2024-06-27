@@ -6,12 +6,15 @@ package TP2;
 
 import TP2.Bool.*;
 
+
 // In the TP1 we have evaluated expressions with an interpreter. 
 // 
 // In the TP2 we do not evaluate expressions, 
-// but we present rules to build a proof tree.
+// but we transform them with rewriting rules.
+// The composition of rules is represented by a proof tree.
 // If a full proof tree is constructed, 
 // then the expressions is always true.
+// It is proved.
 // 
 // Source, see pages 45-46 in 
 // https://www.lix.polytechnique.fr/Labo/Samuel.Mimram/teaching/INF551/course.pdf
