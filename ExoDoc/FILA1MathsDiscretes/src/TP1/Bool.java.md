@@ -24,44 +24,71 @@ abstract public class Bool {
 	}
 	// We define the constant once for all. 
 	public final static Bool T = new True();
-	
+
+```
+## Not
+```
 	// ! n = not b = ? 
 	public static Bool Not(Bool b1) 
     { return null; } //TODO	
 
+```
+## False 
+```
 	// false = ? 
 	public static Bool False() 
     { return null; } //TODO	
 	
+```
+## F
+```
 	// We define the constant once for all 
 	public static Bool F 
     = null; //TODO	
 
+```
+## AND	
+```
 	// conjunction is true when both are true 
 	// b1 /\ b2 = b1 && b2 = ?
 	public static Bool And(Bool b1, Bool b2) 
     { return null; } //TODO	
 
+```
+## OR
+```
 	// disjunction is true when at least one is true 
 	// b1 \/ b2 = b1 || b2 = ?
 	public static Bool Or(Bool b1, Bool b2) 
     { return null; } //TODO	
 
+```
+## IMPLY	
+```
 	// implication is true when b1 is false, true when b1 and b2 are true
 	// b1 => b2 = ? 
 	public static Bool Imply(Bool b1, Bool b2) 
     { return null; } //TODO	
 
+```
+## EQUIVALENCE (IFF)
+```
 	// equivalence is true when b1 equals b2
 	// b1 <=> b2 = ?  
 	public static Bool Equiv(Bool b1, Bool b2) 
     { return null; } //TODO	
 
+```
+## FORALL
+```
 	// Universal quantification `forAll x.b` is true when `b` is true whatever the value of `x`
 	// forAll x.b = ?
 	public static Bool ForAll(Var x,Bool b) 
     { return null; } //TODO	
 
+```
+## EXIST	
+```
 	// Existential quantification `exist x.b` is true when `b` is true for at least one value of `x`
 	// exist x.b = ? 
 	public static Bool Exist(Var x,Bool b) 
