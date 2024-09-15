@@ -111,18 +111,6 @@ public class MainTP2 {
 		b = new Imply(new And(new And(A,B),C),new And(A,new And(B,C)));
         // complete the tactic t to prove the expression b
 
-		t = new TacticImplyI
-				(new TacticAndI
-					(new TacticAndE1
-						(new TacticAndE1(new TacticAxiom(),C)
-						,B)
-					, new TacticAndI
-						(new TacticAndE2(A,new TacticAndE1(new TacticAxiom(),C))
-						,new TacticAndE2(new And(A,B),new TacticAxiom())
-						)
-					)
-				);
-
 		System.out.println("\nproof of " + b);
 		System.out.println("with " + t);
 		System.out.println(t.prove(b));
