@@ -1,6 +1,6 @@
-# Discrete-Mathematics-for-Java-Programmers
+# Discrete-Mathematics-for-Programmers
 
-Here is the material for my course at IMT Atlantique about Discrete Mathematics for Java programmers.
+Here is the material for my course at IMT Atlantique about Discrete Mathematics for programmers.
 
 FIL software engineering apprenticeship program (http://www.imt-atlantique.fr/formation/ingenieur-par-apprentissage/ingenieurs-specialite-ingenierie-logicielle). This 3-year program leads to a Master's degree in software engineering at IMT Atlantique.
 
@@ -29,5 +29,5 @@ The code is presented in two different versions:
 1. in `ExoDoc`: (`.md`) literate markdown 
   It renders nicely on github. It is the one you wish to browse online.
 
-2. in `ExoSrc`: (`.java`) plain Java.
+2. in `ExoSrc`: (`.hs`) plain Haskell.
    It can be used to focus on code and write programs. 
