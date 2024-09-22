@@ -3,10 +3,6 @@
 -- Remi Douence
 # Lab3
 ```
--- This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs License
--- https://creativecommons.org/licenses/by-nc-nd/4.0/
--- Remi Douence
-
 -- Please do not distribute solutions but let people learn by doing the exercices.
 ```
 ## Key Points
@@ -137,6 +133,7 @@ data Nat
   | S Nat
   | Fun Id Nat Nat
   | Var Id
+  | I
   deriving Eq
 
 a = Var "a"
@@ -176,9 +173,11 @@ instance Show Nat where
   show (S n) = "S " ++ bracket n
   show (Fun f n1 n2) = f ++ " " ++ bracket n1 ++ " " ++ bracket n2 
   show (Var x) = x
+  show I = "i"
   
 bracket Z = show Z
 bracket (Var x) = show (Var x)
+bracket I = show I
 bracket n = "(" ++ show n ++ ")"
 
 -- substitution, unification
@@ -188,6 +187,7 @@ unifiable Z Z = True
 unifiable (S n1) (S n2) = unifiable n1 n2
 unifiable (Fun f x y) (Fun g z t) = f==g && unifiable x z && unifiable y t
 unifiable (Var x) n = True
+unifiable I I = True
 unifiable _ _ = False
 
 type Subst = [(Nat,Nat)]
@@ -197,6 +197,7 @@ unify Z Z = []
 unify (S n1) (S n2) = unify n1 n2
 unify (Fun f x y) (Fun g z t) = unify x z ++ unify y t
 unify (Var x) n = [(Var x,n)]
+unify I I = []
 
 get :: Nat -> Subst -> Nat
 get y ((x,n):e) 
@@ -209,6 +210,7 @@ subst e Z = Z
 subst e (S n1) = S (subst e n1)
 subst e (Fun f n1 n2) = Fun f (subst e n1) (subst e n2)
 subst e (Var y) = get (Var y) e
+subst e I = I
 
 -- rewrite 
 
@@ -235,6 +237,7 @@ rewriteAll rs (Fun f n1 n2)
     [Fun f n n2 | n <- rewriteAll rs n1]++
     [Fun f n1 n | n <- rewriteAll rs n2]
 rewriteAll rs (Var x) = rewriteS rs (Var x)
+rewriteAll rs I = rewriteS rs I 
 
 rewrite :: [Rule] -> Nat -> Nat
 rewrite rs n = head (rewriteAll rs n++[n])
@@ -246,23 +249,9 @@ eval rs = fixPoint (rewrite rs)
     fixPoint f x | x==f x = x 
                  | otherwise = fixPoint f (f x)
 
-dfs :: Nat -> [Nat]
-dfs Z = [Z]
-dfs (S n) = S n:dfs n
-dfs (Fun f n1 n2) = Fun f n1 n2:dfs n1++dfs n2
-dfs (Var x) = [Var x]
-
-firstUnification :: Nat -> Rule -> Subst
-firstUnification lhs (Rule n1 n2) = unify lhs (head (filter (unifiable lhs) (dfs n1++dfs n2)))
-
-wellOrdered :: Nat -> Subst -> Bool
-wellOrdered x s = x==subst s x
-
 -- property
 
 type Prop = Rule
-
-showProp (Rule lhs rhs) = show lhs ++ " == " ++ show rhs
 
 rewriteProp :: Rule -> Prop -> Prop 
 rewriteProp r (Rule lhs rhs) 
@@ -282,27 +271,27 @@ lhs (Rule lhs rhs) = lhs
 prove :: Prop -> Nat -> [Rule] -> [Rule] -> Proof
 prove p x rZ rS | p `elem` rS = error "ERROR you cannot use the property but you must use hyp" 
 prove p x rZ rS =
-  let h = substProp [(x,Var "i")] p
+  let h = substProp [(x,I)] p
       pZ = substProp [(x,Z)] p 
-      pS = substProp [(x,S (Var "i"))] p 
+      pS = substProp [(x,S I)] p 
       rewritePropS :: [Rule] -> Rule -> Rule
       rewritePropS []       g = g
-      rewritePropS (Hyp:rs) g | not (wellOrdered (Var "i") (firstUnification (lhs h) g)) = 
-        error ("ERROR you must apply hypothesis " ++ showProp h ++ " on smaller argument")
+      rewritePropS (Hyp:rs) g | g==rewriteProp h g = 
+        error ("ERROR you must apply hypothesis " ++ show h ++ " on i")
       rewritePropS (Hyp:rs) g = rewritePropS rs (rewriteProp h g)
       rewritePropS (r:rs)   g = rewritePropS rs (rewriteProp r g)
-  in Proof (rewritePropS rZ pZ) (rewritePropS rS pS)
+  in Proof p (rewritePropS rZ pZ) (rewritePropS rS pS)
 
 refl :: Rule -> Bool
 refl (Rule lhs rhs) = lhs==rhs
 
-data Proof = Proof Rule Rule
+data Proof = Proof Prop Rule Rule
 
 instance Show Proof where 
-  show (Proof rZ rS) = 
-    "case Z: " ++ show rZ ++ "\n" ++ 
-    "case S: " ++ show rS ++ "\n" ++ 
+  show (Proof p rZ rS) = 
     if (refl rZ && refl rS) 
-    then ("CQFD you can now use the property in other proofs") 
-    else "Proof in progress"
+    then ("CQFD you can now use the property " ++ show p ++ " in other proofs") 
+    else "Proof in progress\n" ++ 
+    "case Z: " ++ (if (refl rZ) then "done" else show rZ) ++ "\n" ++ 
+    "case S: " ++ (if (refl rS) then "done" else show rS) 
 ```
