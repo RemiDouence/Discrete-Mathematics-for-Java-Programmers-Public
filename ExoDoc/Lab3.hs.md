@@ -8,7 +8,7 @@
 ## Key Points
 - natural inductive definition `Nat`
     - zero `Z`
-    - successor `S Nat`
+    - successor `S(Nat)`
     - infinite number of values (saturate the set)
     - binary function symbol: `add Nat Nat`
 - equation
@@ -16,109 +16,114 @@
     - each side is a `Nat` expression 
     - each side can contain variables 
     - right-hand side variables must occur in the left-hand side
-    - example : `add Z y = y` 
+    - example : `add(Z,y) = y` 
     - rules can be recursive
-    - example : `add (S x) y = S (add x y)`
+    - example : `add(S(x),y) = S(add(x,y))`
 - rewriting rules 
     - rule = equation
     - rewrite an expression with a rule
     - unify the left-hand side with a sub-expression
-    - example: `add (S x) y` unifies with `add (S (S (S Z))) (S Z)` with `(x,S (S Z))` and `(y,S Z)`
+    - example: `add(S(x),y)` unifies with `add(S(S(S(Z))),S(Z))` with `(x,S(S(Z)))` and `(y,S(Z))`
     - substitute the variables by their value in the right-hand side
-    - example: `add (S (S (S Z))) (S Z)` is rewriten to `S (add (S (S Z)) (S Z))`
+    - example: `add(S(S(S(Z))),S(Z))` is rewriten to `S(add(S(S(Z)),S(Z)))`
     - apply rules until fixpoint = computation
-    - example: `add (S (S (S Z))) (S Z)` is rewriten to `S (S (S (S Z)))`
+    - example: `add(S(S(S(Z))),S(Z))` is rewriten to `S(S(S(S(Z))))`
 - property 
     - property = equation
-    - example: `add x Z = x`
+    - example: `add(x,Z) = x`
     - impossible to test for an infinite number of values for `x`
 - proof (of property) by induction    
     1. check property for `x` is `Z`?
     2. assume hypothesis: the property is true for `x` is `i`
-    3. check property for `x` is `S i`?
+    3. check property for `x` is `S(i)`?
     4. result: the property is true for `x` is any value
 ```
 {-# OPTIONS_GHC -Wno-x-partial #-} 
 
-addZ = Rule (add Z     y) y
-addS = Rule (add (S x) y) (S (add x y))
+addZ = Rule (add(Z,y))    y
+addS = Rule (add(S(x),y)) (S(add(x,y)))
 
-test_unify = unify (add (S x) y) (add (S (S (S Z))) (S Z))
+test_unify = unify (add(S(x),y)) (add(S(S(S(Z))),S(Z)))
 
-test_subst = subst [(x,S (S Z)),(y,S Z)] (S (add x y))
+test_subst = subst [(x,S(S(Z))),(y,S(Z))] (S(add(x,y)))
 
-test_rewrite = rewrite [addZ,addS] (add (S (S (S Z))) (S Z))
+test_rewrite = rewrite [addZ,addS] (add(S(S(S(Z))),S(Z)))
 
-test_add = eval [addZ,addS] (add (S (S (S Z))) (S Z))
+test_add = eval [addZ,addS] (add(S(S(S(Z))),S(Z)))
 
 -- x+0 = x
-prop11 = Rule (add x Z) x 
+prop11 = Rule (add(x,Z)) x 
 test_prop11 = prove prop11 x [] [] 
 
 -- (x+y)+z = x+(y+z)
-prop12 = Rule (add (add x y) z) (add x (add y z))
+prop12 = Rule (add(add(x,y),z)) (add(x,add(y,z)))
 test_prop12 = prove prop12 x [] []
 
 -- (1+x)+y = x+(1+y)
-prop13 = Rule (add (S x) y) (add x (S y))
+prop13 = Rule (add(S(x),y)) (add(x,S(y)))
 test_prop13 = prove prop13 x [] []
 
 -- x+(1+y) = (1+x)+y
-prop14 = Rule (add x (S y)) (add (S x) y)
+prop14 = Rule (add(x,S(y))) (add(S(x),y))
 test_prop14 = prove prop14 x [] []
 
 -- x+y = y+x
-prop15 = Rule (add x y) (add y x)
+prop15 = Rule (add(x,y)) (add(y,x))
 test_prop15 = prove prop15 x [] []
 
 -- add2
 
-add2Z = Rule (add2 x Z)     x
-add2S = Rule (add2 x (S y)) (S (add2 x y))
+add2Z = Rule (add2(x,Z))    x
+add2S = Rule (add2(x,S(y))) (S(add2(x,y)))
 
-test_add2 = eval [add2Z,add2S] (add2 (S (S (S Z))) (S Z))
+test_add2 = eval [add2Z,add2S] (add2(S(S(S(Z))),S(Z)))
 
-prop21 = Rule (add2 Z y) y
+prop21 = Rule (add2(Z,y)) y
 test_prop21 = prove prop21 y [] []
 
-prop22 = Rule (add2 (add2 x y) z) (add2 x (add2 y z))
+prop22 = Rule (add2(add2(x,y),z)) (add2(x,add2(y,z)))
 test_prop22 = prove prop22 z [] []
 
-prop23 = Rule (add2 (S x) y) (add2 x (S y))
+prop23 = Rule (add2(S(x),y)) (add2(x,S(y)))
 test_prop23 = prove prop23 y [] []
 
-prop24 = Rule (add2 x (S y)) (add2 (S x) y)
+prop24 = Rule (add2(x,S(y))) (add2(S(x),y))
 test_prop24 = prove prop24 y [] []
 
-prop25 = Rule (add2 x y) (add2 y x)
+prop25 = Rule (add2(x,y)) (add2(y,x))
 test_prop25 = prove prop25 y [] []
 
 -- add3
 
-add3Z = Rule (add3 Z     y) y
-add3S = Rule (add3 (S x) y) (add3 x (S y))
+add3Z = Rule (add3(Z,y))    y
+add3S = Rule (add3(S(x),y)) (add3(x,S(y)))
 
-test_add3 = eval [add3Z,add3S] (add3 (S (S (S Z))) (S Z))
+test_add3 = eval [add3Z,add3S] (add3(S(S(S(Z))),S(Z)))
 
-prop31 = Rule (add3 x (S y)) (add3 (S x) y)
+prop31 = Rule (add3(x,S(y))) (add3(S(x),y))
 test_prop31 = prove prop31 x [] []
 
-prop32 = Rule (S (add3 x y)) (add3 (S x) y)
+prop32 = Rule (S(add3(x,y))) (add3(S(x),y))
 test_prop32 = prove prop32 x [] []
 
-prop33 = Rule (add3 (S x) y) (S (add3 x y)) 
+prop33 = Rule (add3(S(x),y)) (S(add3(x,y))) 
 test_prop33 = prove prop33 x [] []
 
-prop34 = Rule (add3 x Z) x
+prop34 = Rule (add3(x,Z)) x
 test_prop34 = prove prop34 x [] []
 
-prop35 = Rule (add3 x y) (add3 y x)
+prop35 = Rule (add3(x,y)) (add3(y,x))
 test_prop35 = prove prop35 x [] []
 
-prop36 = Rule (add3 (add3 x y) z) (add3 x (add3 y z))
+prop36 = Rule (add3(add3(x,y),z)) (add3(x,add3(y,z)))
 test_prop36 = prove prop36 x [] []
 
+-- prove add is equivalent to add2
+
+-- prove add is equivalent to add3
+
 -- define multiplication
+
 -- prove properties about multiplication
 
 
@@ -162,23 +167,18 @@ x = Var "x"
 y = Var "y"
 z = Var "z"
                 
-add  = Fun "add"
-add2 = Fun "add2"
-add3 = Fun "add3"
-add4 = Fun "add4"
-mul  = Fun "mul"
+add(x,y)  = Fun "add"  x y 
+add2(x,y) = Fun "add2" x y
+add3(x,y) = Fun "add3" x y
+add4(x,y) = Fun "add4" x y
+mul(x,y)  = Fun "mul"  x y 
 
 instance Show Nat where 
   show Z = "Z"
-  show (S n) = "S " ++ bracket n
-  show (Fun f n1 n2) = f ++ " " ++ bracket n1 ++ " " ++ bracket n2 
+  show (S n) = "S(" ++ show n ++ ")"
+  show (Fun f n1 n2) = f ++ "(" ++ show n1 ++ "," ++ show n2 ++ ")"
   show (Var x) = x
   show I = "i"
-  
-bracket Z = show Z
-bracket (Var x) = show (Var x)
-bracket I = show I
-bracket n = "(" ++ show n ++ ")"
 
 -- substitution, unification
 
